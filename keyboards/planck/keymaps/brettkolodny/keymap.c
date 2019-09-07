@@ -137,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT_planck_grid(
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    PLUS_EQUALS, KC_7,     KC_8,    KC_9,    KC_0,    _______,
-    KC_DEL,  KC_LT,   KC_LCBR, KC_LBRC, KC_LPRN, KC_UNDS, FAT_ARROW,   KC_RPRN,  KC_RBRC, KC_RCBR, KC_GT,   KC_BSLS,
+    KC_DEL,  KC_LT,   KC_LCBR, KC_LBRC, KC_LPRN, KC_UNDS, _______,   KC_RPRN,  KC_RBRC, KC_RCBR, KC_GT,   KC_BSLS,
     KC_CAPS, _______, _______, _______, _______, _______, _______,     _______, _______, _______,  _______, _______,
     _______, _______, _______, _______, _______, _______, _______,     _______, KC_MNXT, KC_VOLD,  KC_VOLU, KC_MPLY
 ),
@@ -267,12 +267,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case PLUS_EQUALS:
       if (record->event.pressed) {
           SEND_STRING("+=");
-      }
-      return false;
-      break;
-    case FAT_ARROW:
-      if (record->event.pressed) {
-        SEND_STRING("() => {}")
       }
       return false;
       break;
